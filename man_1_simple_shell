@@ -1,43 +1,46 @@
-.TH SIMPLE_SHELL 1 "30-12-2023" "1.0" "Simple Shell Manual"   
-
+.TH SIMPLE_SHELL 1 "December 2023" "Simple Shell Project"
 .SH NAME
-simple_shell \- Basic UNIX command interpreter    
+simple_shell \- a simple UNIX command line interpreter
 
 .SH SYNOPSIS
-simple_shell
- 
+.B simple_shell
+[\fIcommand\fR]
+
 .SH DESCRIPTION
-simple_shell is a command line interpreter designed to execute simple commands from the standard input. It provides a prompt where users can enter commands, executes those commands, and displays the prompt again for the next command.
+The \fBsimple_shell\fR is a basic UNIX command line interpreter developed as part of the Simple Shell Group Project. It interprets user commands and executes them accordingly.
 
-This shell supports single-word commands without advanced features such as semicolons, pipes, or redirections.
+.SH OPTIONS
+The \fBsimple_shell\fR does not support any command-line options.
 
-.SH FEATURES
-- Displays a prompt for user commands.
-- Executes commands entered by the user.
-- Handles commands with arguments.
-- Handles the PATH environment variable to find executables.
-- Handles errors gracefully, including handling the "end of file" condition (Ctrl+D).
+.SH COMMANDS
+The following commands are supported by the shell:
+
+.BR exit
+Exits the shell.
+
+.BR env
+Prints the current environment.
 
 .SH USAGE
-To use the simple_shell, run the program and start entering commands when prompted. Exit the shell using the 'exit' command.
+To start the simple shell, run the following command in your terminal:
 
-.SH BUILT-IN COMMANDS
-- exit: Exits the shell.
-- env: Prints the current environment.
+.BR simple_shell
 
-.SH EXAMPLES
-$ ./simple_shell
-#cisfun$ ls
-#cisfun$ /bin/ls
-#cisfun$ ^C
-$ echo "/bin/ls" | ./simple_shell
-$ exit
-
-.SH BUGS
-Not many bugs found.
+.SH FILES
+.IR /etc/simple_shell/ " - Configuration directory for the simple shell."
 
 .SH AUTHORS
-Turqut Mehdiyev, Ziyad Ibrahimov
+Farhad Asgarzada <8707@holbertonstudents.com>
+Asmar Jabbarova <9068@holbertonstudents.com>
+
+.SH SEE ALSO
+intro(1), bash(1)
+
+.SH BUGS
+No known bugs.
 
 .SH COPYRIGHT
-No copyright. This is free and unencumbered software released into the public domain.
+This manual page was written for the Simple Shell Project by Isa Guliyev and Aydan Jafarli.
+
+.SH DISCLAIMER
+This manual page is provided "as is" without any warranty.
