@@ -1,7 +1,7 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
-void
+main(void)
 run_non_interactive(char **env)
 {
 	char **cpargv = NULL;
