@@ -31,6 +31,10 @@ main(__attribute__((unused)) int ac, char **argv, char **env)
 
 	param = malloc(sizeof(char *) * 2);
 	param[1] = NULL;
+		char *param = NULL, **argvector = NULL;
+	ssize_t nread = 0;
+	size_t len = 0;
+	int status = 0, tty = isatty(STDIN_FILENO), i = 0;
 	while (1)
 	{
 		printf("#cisfun$ ");
