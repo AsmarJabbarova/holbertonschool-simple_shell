@@ -13,7 +13,8 @@ run_non_interactive(char **env)
 			execve(strtok(cpargv[0], " \n\t\a"), cpargv, env);
 			dprintf(STDERR_FILENO
 				, "%s: No such file or directory\n", cpargv[0]);
-			free(cpargv[0]);
+			cpargv = malloc(sizeof(char *) * 2);
+	cpargv[1] = NULL;
 			free(cpargv);
 			exit(EXIT_FAILURE);
 	@@ -44,21 +41,23 @@ run_non_interactive()
