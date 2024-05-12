@@ -33,8 +33,8 @@ gcc -o hsh *.c
 
 ## Contributors
 
-- [Kanan Goylarov](https://github.com/kanangoylarov)
-- [Mirgubad Akbarov](https://github.com/Mirgubad)
+- [Farhad Asgarzada](https://github.com/ferhadesger)
+- [Asmar Jabbarova](https://github.com/asmarjabbarova)
 
 ## License
 

@@ -1,93 +1,63 @@
-.TH simple_shell 1 "December 2023" "Simple Shell Manual"
+.\" HSH(1) 
+.\" HSH(1)
+.TH man 1 "11 Ago 2022" "1.0"
 
 .SH NAME
-simple_shell \- A simple Unix-like shell
+
+hsh \- command interpreter (shell)
 
 .SH SYNOPSIS
-.B simple_shell
+
+hsh [-o option_name] [+o option_name] [command_file [argument ...]]
 
 .SH DESCRIPTION
-.NP
-The
-.B simple_shell
-is a minimalistic shell implementation designed for basic command-line operations.
 
-.SH OPTIONS
-The
-.B simple_shell
-does not have any command-line options.
+This program simulates a command interpreter based in Unix and GNU/LINUX with its basic commands.
+through a terminal emulator and some executable instructions(shell scripts) the user can interact with this \fBsimple_shell.\fR
 
-.SH COMMANDS
-.NP
-The following commands are supported:
+This simple_shell is not supossed to be an exact imitation of the original Unix Shell. This doesn't cover all of the instructions the original does.
 
-- \fBexit\fP: Exits the shell.
-- \fBenv\fP: Prints the current environment variables.
-- Any other executable located in the system's PATH or specified with a full path.
 
-.SH USAGE
+.SH OVERVIEW
+
+Reading from either the terminal or files, simple_shell interprets and executes commands.
+
+.I PATH.
+It does not yet handle piping, redirection, pattern matching, variable expansions, and more extra functions.
+.SS Invocation
+An
+.I interactive
+simple shell can be invoked by typing ./simple_shell. Meanwhile, a
+.I non-interactive
+simple shell can also be invoked via a pipe (e.g. echo "/bin/ls" | ./simple_shell).
+.SS Command Execution
+After a command has been split into words, if it results in a simple command and an optional list of arguments, the following actions are taken.
+.sp
+If the command name contains no slashes, the shell attempts to locate it. If there exists a shell function by that name that function is invoked. If the name does not match a function, the shell searches for it in the list of shell builtins. If a match is found, that builtin is invoked.
+.sp
+If the name is neither a shell function nor a builtin, and contains no slashes, the simple shell searches each element of the environmental variable PATH for a directory containing an executable file by that name. If the search is unsuccessful, the simple shell prints an error message "Error: File or description not found."i
+
+.SH BUILTIN COMMANDS
+
+Builtin commands that replicate the original UNIX shell:
+
 .PP
-To use the shell, follow these steps:
 
-1. Compile the code using a C compiler like GCC:
-.B
-gcc -o hsh *.c
+.B - exit
 
-2. Run the shell:
-.B
-./hsh
+Terminates the program.
+.sp
+.B - env
 
-3. Enter commands and press Enter to execute them.
+Prints the enviromental variables and their values to standard output.
+.sp
 
-.SH EXAMPLES
-.PP
-Example 1: Run a command
-.B
-$ ./hsh
-$ ls
-
-Example 2: Exit the shell
-.B
-$ ./hsh
-$ exit
-
-.SH RETURN VALUES
-.PP
-The shell returns the following exit values:
-
-- 0: Successful execution.
-- 1: Error during execution.
-- 127: Command not found.
-
-.SH AUTHORS
-.PP
-- Kamal Huseynli
-- Zaman Kazimov
-
-.SH HOLBERTON SCHOOL COHORT
-.PP
-BAK-1023
-
-.SH SEE ALSO
-.PP
-The full source code and documentation for the simple shell can be found at: https://github.com/yourusername/simple_shell
 
 .SH BUGS
-.PP
-Report any bugs to the GitHub repository issue tracker.
 
-.SH COPYRIGHT
-.PP
-This is free and unencumbered software released into the public domain.
+No known bugs.
+Please report any issues to the authors.
 
-.SH NOTES
-.PP
-This manual page was written by [Your Name] <your.email@example.com>.
-
-.SH VERSION
-.PP
-1.0
-
-.SH DATE
-.PP
-December 2023
+.SH AUTHORS
+Farhad Asgarzada
+Asmar Jabbarova
