@@ -1,33 +1,93 @@
-.TH HSH 1 10-05-2024 HSH\ 1 Simple\ Shell\ Manual
+.TH simple_shell 1 "December 2023" "Simple Shell Manual"
 
 .SH NAME
-hsh - Simple Shell. Command line interpreter
+simple_shell \- A simple Unix-like shell
 
 .SH SYNOPSIS
-Run ./hsh [command] [argument] for interactive mode and echo "[command] [argument]" | ./hsh for non-interactive mode.
+.B simple_shell
 
 .SH DESCRIPTION
-Simple Shell is a command line interpreter developed in C language that emulates the most basic functionality of "sh".
+.NP
+The
+.B simple_shell
+is a minimalistic shell implementation designed for basic command-line operations.
 
-.SH COMPILATION
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
+.SH OPTIONS
+The
+.B simple_shell
+does not have any command-line options.
 
-.SH MODES
-The shell can be used in interactive or non-interactive mode. The interactive mode is how the shell is normally used, the executable file is run and we can write commands. In the non-interactive mode you pass the command to the executable file with a pipe operator. In the "EXAMPLES" section you can see how to use them.
+.SH COMMANDS
+.NP
+The following commands are supported:
+
+- \fBexit\fP: Exits the shell.
+- \fBenv\fP: Prints the current environment variables.
+- Any other executable located in the system's PATH or specified with a full path.
+
+.SH USAGE
+.PP
+To use the shell, follow these steps:
+
+1. Compile the code using a C compiler like GCC:
+.B
+gcc -o hsh *.c
+
+2. Run the shell:
+.B
+./hsh
+
+3. Enter commands and press Enter to execute them.
 
 .SH EXAMPLES
-- Interactive mode:
-.TP
-\r$ ./hsh
-.TP
-\r\rhsh$ ls -l
-.TP
-- Non-interactive mode:
-.TP
-\recho "ls -l" | ./hsh
+.PP
+Example 1: Run a command
+.B
+$ ./hsh
+$ ls
+
+Example 2: Exit the shell
+.B
+$ ./hsh
+$ exit
+
+.SH RETURN VALUES
+.PP
+The shell returns the following exit values:
+
+- 0: Successful execution.
+- 1: Error during execution.
+- 127: Command not found.
 
 .SH AUTHORS
-Farhad Asgarzada 
-.TP
-Asmar JAbbarova 
+.PP
+- Kamal Huseynli
+- Zaman Kazimov
 
+.SH HOLBERTON SCHOOL COHORT
+.PP
+BAK-1023
+
+.SH SEE ALSO
+.PP
+The full source code and documentation for the simple shell can be found at: https://github.com/yourusername/simple_shell
+
+.SH BUGS
+.PP
+Report any bugs to the GitHub repository issue tracker.
+
+.SH COPYRIGHT
+.PP
+This is free and unencumbered software released into the public domain.
+
+.SH NOTES
+.PP
+This manual page was written by [Your Name] <your.email@example.com>.
+
+.SH VERSION
+.PP
+1.0
+
+.SH DATE
+.PP
+December 2023
