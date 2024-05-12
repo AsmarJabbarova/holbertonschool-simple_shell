@@ -1,10 +1,5 @@
-#include "main.h
-/**
- * _getline - function to implement getline
- * Return: NULL
- */
 
-char *_getline(void)
+char *getline(void)
 {
 	char *line = NULL;
 	size_t size = 0;
