@@ -1,42 +1,33 @@
-SIMPLE_SHELL 1 "December 2023" "Simple Shell Project"
+.TH HSH 1 10-05-2024 HSH\ 1 Simple\ Shell\ Manual
+
 .SH NAME
-simple_shell \- a simple UNIX command line interpreter
+hsh - Simple Shell. Command line interpreter
+
 .SH SYNOPSIS
-.B simple_shell
-[\fIcommand\fR]
+Run ./hsh [command] [argument] for interactive mode and echo "[command] [argument]" | ./hsh for non-interactive mode.
 
 .SH DESCRIPTION
-The \fBsimple_shell\fR is a basic UNIX command line interpreter developed as part of the Simple Shell Group Project. It interprets user commands and executes them accordingly.
+Simple Shell is a command line interpreter developed in C language that emulates the most basic functionality of "sh".
 
-.SH OPTIONS
-The \fBsimple_shell\fR does not support any command-line options.
+.SH COMPILATION
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 
-.SH COMMANDS
-The following commands are supported by the shell:
+.SH MODES
+The shell can be used in interactive or non-interactive mode. The interactive mode is how the shell is normally used, the executable file is run and we can write commands. In the non-interactive mode you pass the command to the executable file with a pipe operator. In the "EXAMPLES" section you can see how to use them.
 
-.BR exit
-Exits the shell.
-
-.BR env
-Prints the current environment.
-
-.SH USAGE
-To start the simple shell, run the following command in your terminal:
-
-.BR simple_shell
-
-.SH FILES
-.IR /etc/simple_shell/ " - Configuration directory for the simple shell."
+.SH EXAMPLES
+- Interactive mode:
+.TP
+\r$ ./hsh
+.TP
+\r\rhsh$ ls -l
+.TP
+- Non-interactive mode:
+.TP
+\recho "ls -l" | ./hsh
 
 .SH AUTHORS
-Farhad Asgarzada <8707@holbertonstudents.com>
-Asmar Jabbarova <9068@holbertonstudents.com>
+Farhad Asgarzada 
+.TP
+Asmar JAbbarova 
 
-.SH SEE ALSO
-intro(1), bash(1)
-
-.SH BUGS
-No known bugs.
-
-.SH DISCLAIMER
-This manual page is provided "as is" without any warranty.
