@@ -24,11 +24,7 @@ int main(void)
 		}
 		array = splitter(my_prompt, " \n\t");
 		free(my_prompt);
-		if (!*array)
-		{
-			free(array);
-			continue;
-		}
+
 		 if (strcmp(array[0], "exit") == 0)
                 {
                         if (array[1] != NULL)
