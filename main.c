@@ -24,4 +24,27 @@ int main(void)
 				free(args[i]);
 			free(args);
 			continue; }
-		else if
+		else if (strcmp(args[0], "exit") == 0 && args[1] == NULL)
+		{
+			for (i = 0; args[i]; i++)
+				free(args[i]);
+			free(args);
+			exit(turn); }
+		else if (strcmp(args[0], "env") == 0)
+		{
+			for (i = 0; args[i]; i++)
+			free(args[i]);
+			free(args);
+			print_env();
+			continue; }
+		turn = execute_command(args);
+
+		for (i = 0; args[i]; i++)
+			free(args[i]);
+		free(args); }
+
+	free(line);
+	if (turn)
+		exit(turn);
+	return (0);
+}
