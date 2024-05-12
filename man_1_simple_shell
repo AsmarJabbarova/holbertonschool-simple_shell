@@ -1,7 +1,6 @@
-.TH SIMPLE_SHELL 1 "December 2023" "Simple Shell Project"
+SIMPLE_SHELL 1 "December 2023" "Simple Shell Project"
 .SH NAME
 simple_shell \- a simple UNIX command line interpreter
-
 .SH SYNOPSIS
 .B simple_shell
 [\fIcommand\fR]
@@ -38,9 +37,6 @@ intro(1), bash(1)
 
 .SH BUGS
 No known bugs.
-
-.SH COPYRIGHT
-This manual page was written for the Simple Shell Project by Isa Guliyev and Aydan Jafarli.
 
 .SH DISCLAIMER
 This manual page is provided "as is" without any warranty.
